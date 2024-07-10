@@ -1,0 +1,66 @@
+.form-containercivilian {
+    background-image: url('../../assets/civilian.png'); 
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+  }
+  
+ 
+  
+  .formcivilian {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    padding: 2rem;
+    border-radius: 10px;
+  }
+  
+  .form-rowcivilian {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .form-inputcivilian {
+    margin: 1.5rem;
+    padding: 0.5rem;
+   
+    width: calc(33% - 1rem); 
+    border: none;
+    border-radius: 5px;
+  }
+  .form-input1civilian{
+    margin: 1.5rem;
+    padding: 0.5rem;
+   
+    width: 80%; 
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .form-rowcivilian > .form-inputcivilian {
+    width: calc(33% - 1rem);
+  }
+  
+  .form-buttoncivilian {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color:white;
+    color:orangered;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 15%;
+  }
+  
+  .form-buttoncivilian:hover {
+    background-color: darkred;
+  }
+  

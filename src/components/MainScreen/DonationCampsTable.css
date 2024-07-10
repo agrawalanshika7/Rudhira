@@ -1,0 +1,15 @@
+.camps-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.camps-table th, .camps-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.camps-table th {
+    background-color: #333;
+    color: #fff;
+}

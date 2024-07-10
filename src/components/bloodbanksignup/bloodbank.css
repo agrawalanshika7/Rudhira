@@ -1,0 +1,61 @@
+.form-containerbb {
+  background-image: url('../../assets/Bloodbank.png');
+  background-size: cover;
+  filter: brightness(130%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+}
+
+
+
+.formbb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.form-rowbb {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-inputbb, .form-input1bb {
+  margin: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.form-inputbb {
+  width: calc(33% - 3rem); /* Adjusted for correct width calculation */
+}
+
+.form-input1bb {
+  width: 80%;
+}
+
+.form-buttonbb {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: orangered;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 15%;
+}
+
+.form-buttonbb:hover {
+  background-color: darkred;
+}
+

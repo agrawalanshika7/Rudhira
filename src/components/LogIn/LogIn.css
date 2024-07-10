@@ -1,0 +1,73 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../../assets/signup.png') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .form-wrapper {
+    
+    padding: 20px;
+    border-radius: 10px;
+    
+    max-width: 400px;
+    padding-left: 750px;
+    padding-top: 200px;
+    width: 100%;
+  }
+  
+  .title {
+    font-size: 24px;
+    color: #e53935;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .styled-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .styled-input1{
+    padding-left: 100px;
+    padding-top: 5px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .styled-input1:hover{
+    color: blue;
+  }
+  
+  .button {
+    width: 100%;
+    padding: 10px;
+    background: #e53935;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .button:hover {
+    background: #d32f2f;
+  }

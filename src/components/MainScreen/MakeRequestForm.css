@@ -1,0 +1,73 @@
+.make-request-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.make-request-form {
+   
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+    background-color: #7e0707; 
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+
+.make-request-form input, .make-request-form select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.make-request-form input, .make-request-form select {
+    background-color: #eee;
+}
+
+.make-requestbutton {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 10px;
+    
+  
+}
+.make-requestsubmit{
+    display: flex;
+    justify-content: center;
+}
+
+.make-requestbutton:hover {
+    background-color: #555;
+}
+.make-requestbutton:click{
+    background-color: green;
+    
+}
+
+
+
+
+.make-requestbox{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-around;
+    
+}
+.state-citybox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
