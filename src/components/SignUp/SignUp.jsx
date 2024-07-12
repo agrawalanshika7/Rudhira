@@ -1,45 +1,10 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React from 'react';
 import './SignUp.css';
 import backgroundImage from '../../assets/signup.png';
-import { AuthContext } from '../../Context';
-import { useNavigate } from "react-router-dom";
-import { BASE_URL, SIGNUP_ENDPOINT } from '../../constants';
+import useSignUp from '../../hooks/useSignUp.js';
 
 const SignUp = () => {
-  const { setAuthData, authData } = useContext(AuthContext);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(true);
-  const [signUpResponse, setSignUpResponse] = useState(null);
-  const navigate = useNavigate();
-
-  const handleSignUp = (e) => {
-    e.preventDefault();
-    // Store email and password in context
-    setAuthData({ email, password, isUserLoggedIn });
-    console.log('Email:', email);
-    console.log('Password:', password);
-    if(email && password ){
-      const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          "userName": email,
-          "password": password
-         })
-    };
-    fetch(BASE_URL+SIGNUP_ENDPOINT, requestOptions)
-        .then(response => response.json())
-        .then(data =>setSignUpResponse(data));
-    }
-    
-  };
-  useEffect(() => {
-    if(signUpResponse){
-navigate('/profile-creation')
-    }
-  },[signUpResponse]);
-  //console.log("authData", authData);
+  const { email, setEmail, password, setPassword, handleSignUp } = useSignUp();
 
   return (
     <div className="sign-up">
@@ -66,7 +31,7 @@ navigate('/profile-creation')
       </div>
     </div>
   );
-}
+};
 
 export default SignUp;
 

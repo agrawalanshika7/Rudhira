@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './bloodbank.css';
-import { BASE_URL } from '../../constants';
-import { useNavigate } from 'react-router-dom';
-
-const CREATE_PROFILE_ENDPOINT = '/users/makeProfile';
+import useForm from '../../hooks/useForm';
 
 const states = [
   'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 
@@ -12,40 +9,18 @@ const states = [
   'Andaman and Nicobar Islands', 'Chandigarh', 'Dadra and Nagar Haveli and Daman and Diu', 'Lakshadweep', 'Delhi', 'Puducherry'
 ];
 
+const initialFormValues = {
+  bloodBankName: '',
+  ownerFirstName: '',
+  ownerLastName: '',
+  address: '',
+  city: '',
+  state: '',
+  phoneNumber: '',
+};
+
 const BloodBank = () => {
-  const [formData, setFormData] = useState({
-    bloodBankName: '',
-    ownerFirstName: '',
-    ownerLastName: '',
-    address: '',
-    city: '',
-    state: '',
-    phoneNumber: '',
-  });
-  const navigate = useNavigate();
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...formData, role: 'bloodbank' }),
-    };
-    fetch(BASE_URL + CREATE_PROFILE_ENDPOINT, requestOptions)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Profile created:', data);
-        navigate('/profile-success');
-      });
-  };
+  const { formData, handleChange, handleSubmit } = useForm(initialFormValues);
 
   return (
     <div className="form-containerbb">
@@ -133,4 +108,5 @@ const BloodBank = () => {
 };
 
 export default BloodBank;
+
 

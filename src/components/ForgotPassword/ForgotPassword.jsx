@@ -1,35 +1,9 @@
-import React, { useState, useEffect } from 'react'; // Import useEffect
+import React from 'react';
 import './ForgotPassword.css';
-import { BASE_URL } from '../../constants'; // Corrected path
-import { useNavigate } from 'react-router-dom';
-
-const FORGOT_PASSWORD_ENDPOINT = '/users/forgotPassword';
+import useForgotPassword from '../../hooks/useForgotPassword';
 
 const ForgotPassword = () => {
-  const [email, setEmail] = useState('');
-  const [forgotPasswordResponse, setForgotPasswordResponse] = useState(null);
-  const navigate = useNavigate();
-
-  const handleForgotPassword = (e) => {
-    e.preventDefault();
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 
-        "userName": email
-      })
-    };
-    fetch(BASE_URL + FORGOT_PASSWORD_ENDPOINT, requestOptions)
-      .then(response => response.json())
-      .then(data => setForgotPasswordResponse(data));
-  };
-
-  useEffect(() => {
-    if (forgotPasswordResponse) {
-      console.log('Password reset link sent:', forgotPasswordResponse);
-      navigate('/password-reset-confirmation');
-    }
-  }, [forgotPasswordResponse, navigate]);
+  const { email, setEmail, handleForgotPassword } = useForgotPassword();
 
   return (
     <div className="containerfp">
@@ -54,3 +28,4 @@ const ForgotPassword = () => {
 };
 
 export default ForgotPassword;
+
