@@ -1,10 +1,9 @@
-# Getting Started with Create React App
+![image](https://github.com/user-attachments/assets/a984f354-13cc-420a-bf77-5a2946a5e118)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# RUDHIRA
+Rudhira is a comprehensive blood donation management system designed to simplify the process of connecting blood donors with recipients.This platform caters to donors, recipients, and organizations, ensuring city-based donor-recipient matches and reduced operational delays during times of emergencies. It also allows blood banks to effectively manage and promote quarterly blood donation events. Rudhira aims to make blood donation more accessible, efficient, and transparent.
 
-## Available Scripts
 
-In the project directory, you can run:
 
 ### `npm start`
 
