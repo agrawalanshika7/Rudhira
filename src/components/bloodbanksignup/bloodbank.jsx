@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './bloodbank.css';
 import useForm from '../../hooks/useForm';
+import useUnifiedApi from '../../hooks/useHook';
 
 const states = [
   'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 
@@ -20,11 +22,22 @@ const initialFormValues = {
 };
 
 const BloodBank = () => {
+  const navigate = useNavigate();
   const { formData, handleChange, handleSubmit } = useForm(initialFormValues);
+  const { request } = useUnifiedApi();
+
+  const onSubmit = () => {
+    request('/bloodbanks/register', 'POST', formData)
+      .then(() => {
+        console.log('Blood bank registered successfully');
+        navigate('/bloodbankpage');
+      })
+      .catch((err) => console.error(err));
+  };
 
   return (
     <div className="form-containerbb">
-      <form className="formbb" onSubmit={handleSubmit}>
+      <form className="formbb" onSubmit={(e) => handleSubmit(e, onSubmit)}>
         <input
           type="text"
           placeholder="Blood Bank's Name"

@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './civilian.css';
 import useForm from '../../hooks/useForm';
+import useUnifiedApi from '../../hooks/useHook';
 
 const states = [
   'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 
@@ -22,11 +24,22 @@ const initialFormValues = {
 };
 
 const Civilian = () => {
+  const navigate = useNavigate();
   const { formData, handleChange, handleSubmit } = useForm(initialFormValues);
+  const { handleCreateProfile } = useUnifiedApi();
+
+  const onSubmit = () => {
+    handleCreateProfile(formData)
+      .then(() => {
+        console.log('Profile created successfully');
+        navigate('/mainscreen');
+      })
+      .catch((err) => console.error(err));
+  };
 
   return (
     <div className="form-containercivilian">
-      <form className="formcivilian" onSubmit={handleSubmit}>
+      <form className="formcivilian" onSubmit={(e) => handleSubmit(e, onSubmit)}>
         <div className="form-rowcivilian">
           <input
             type="text"
@@ -144,6 +157,7 @@ const Civilian = () => {
 };
 
 export default Civilian;
+
 
 
 

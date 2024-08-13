@@ -1,6 +1,6 @@
 import React from 'react';
 import './ForgotPassword.css';
-import useForgotPassword from '../../hooks/useForgotPassword';
+import useForgotPassword from '../../hooks/useHook';
 
 const ForgotPassword = () => {
   const { email, setEmail, handleForgotPassword } = useForgotPassword();

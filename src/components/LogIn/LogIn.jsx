@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './LogIn.css';
-import useLogin from '../../hooks/useLogIn.js';
+import useLogin from '../../hooks/useHook.js';
+import useUnifiedApi from '../../hooks/useHook.js';
 
 const LoginForm = () => {
-  const { email, setEmail, password, setPassword, handleLogin, errorMessage } = useLogin();
+  const navigate = useNavigate();
+  const {  handleLogin, errorMessage } = useUnifiedApi();
+  const [email,setEmail] = useState('');
+  const [password,setPassword] =useState('');
+  const onSubmit = (e) => {
+    e.preventDefault();
+    handleLogin(email,password)
+      /*(() => {
+        console.log('Login successful');
+      //  navigate('/mainscreen');
+      })
+      .catch((err) => console.error(err));*/
+  };
 
   return (
     <div className="container">
       <div className="form-wrapper">
-        <form onSubmit={handleLogin}>
+        <form onSubmit={onSubmit}>
           <input 
             className="styled-input" 
             type="email" 
@@ -35,4 +49,5 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+
 

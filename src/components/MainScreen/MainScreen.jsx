@@ -7,9 +7,14 @@ import './MainScreen.css';
 
 const MainScreen = () => {
     const [activeTab, setActiveTab] = useState('makeRequest');
+    const [recipients, setRecipients] = useState([]); // State to manage recipients
 
     const handleTabClick = (tab) => {
         setActiveTab(tab);
+    };
+
+    const addRecipient = (newRecipient) => {
+        setRecipients([...recipients, newRecipient]); // Add new recipient to the list
     };
 
     return (
@@ -40,13 +45,12 @@ const MainScreen = () => {
             <div className="tab-content">
                 {activeTab === 'makeRequest' && (
                     <div className="make-request">
-                        <MakeRequestForm />
-                        
+                        <MakeRequestForm addRecipient={addRecipient} /> {/* Pass addRecipient function */}
                     </div>
                 )}
                 {activeTab === 'availableRecipients' && (
                     <div className="available-recipients">
-                        <AvailableRecipientsTable />
+                        <AvailableRecipientsTable recipients={recipients} /> {/* Pass recipients data */}
                     </div>
                 )}
                 {activeTab === 'donationCamps' && (
@@ -61,3 +65,4 @@ const MainScreen = () => {
 };
 
 export default MainScreen;
+

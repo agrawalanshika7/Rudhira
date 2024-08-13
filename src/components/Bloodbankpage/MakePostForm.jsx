@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './MakeRequestForm.css';
+import './MakePostForm.css';
 
-const MakeRequestForm = ({ addRecipient }) => {
+const MakeRequestForm = () => {
   const [formData, setFormData] = useState({
     recipientName: '',
     bloodGroup: '',
@@ -9,6 +9,8 @@ const MakeRequestForm = ({ addRecipient }) => {
     state: '',
     city: ''
   });
+
+  const [responseMessage, setResponseMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,21 +20,34 @@ const MakeRequestForm = ({ addRecipient }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    addRecipient(formData);
-    setFormData({
-      recipientName: '',
-      bloodGroup: '',
-      phoneNumber: '',
-      state: '',
-      city: ''
-    });
+    
+    // Validation logic can be added here
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    };
+
+    try {
+      const response = await fetch('/api/make-request', requestOptions); // Adjust the endpoint as necessary
+      const data = await response.json();
+      if (response.ok) {
+        setResponseMessage('Request published successfully!');
+      } else {
+        setResponseMessage('Failed to publish request. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setResponseMessage('An error occurred. Please try again.');
+    }
   };
 
   return (
     <div className="make-request-section">
-      <form className="make-request-form" onSubmit={handleSubmit}>
+      <form className="make-request-form" onSubmit={handleSubmit} style={{ backgroundColor: "brown" }}>
         <div className='make-requestbox'>
           <div>
             <input 
@@ -99,6 +114,7 @@ const MakeRequestForm = ({ addRecipient }) => {
           <button className='make-requestbutton' type="submit">Publish request</button>
         </div>
       </form>
+      {responseMessage && <p>{responseMessage}</p>}
     </div>
   );
 };

@@ -1,45 +1,29 @@
 import React from 'react';
 import './AvailableRecipientsTable.css';
 
-const AvailableRecipientsTable = () => {
-    return (
-        <div className="dashboard">
-        <main className="main-content">
+const AvailableRecipientsTable = ({ recipients }) => {
+  return (
+    <div className="dashboard">
+      <main className="main-content">
         <div className="table-container">
           <table className="dashboard-table">
-           
             <tbody>
-              {/* You can map over your data here */}
               <tr>
-                <td>S. no.</td>
-                <td>Recipient</td>
-                <td>Date and Time</td>
-                <td>Contact Number</td>
+                <th>S. no.</th>
+                <th>Recipient</th>
+                <th>Date and Time</th>
+                <th>Contact Number</th>
+                <th>Blood Grp</th>
               </tr>
-              <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>2024-07-01 10:00 AM</td>
-                <td>123-456-7890</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>2024-07-01 10:00 AM</td>
-                <td>123-456-7890</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>2024-07-01 10:00 AM</td>
-                <td>123-456-7890</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>2024-07-01 10:00 AM</td>
-                <td>123-456-7890</td>
-              </tr>
+              {recipients.map((recipient, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{recipient.recipientName}</td>
+                  <td>{new Date().toLocaleString()}</td>
+                  <td>{recipient.phoneNumber}</td>
+                  <td>{recipient.bloodGroup}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
@@ -51,7 +35,7 @@ const AvailableRecipientsTable = () => {
         </div>
       </main>
     </div>
-    );
+  );
 };
 
 export default AvailableRecipientsTable;

@@ -14,6 +14,7 @@ import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import MainScreen from './components/MainScreen/MainScreen';
 import SignUp from './components/SignUp/SignUp';
 import ChangePassword from './components/ChangePassword/ChangePassword';
+import BbMainScreen from './components/Bloodbankpage/MainScreen';
 
 function App() {
   const [currentFlow, setCurrentFlow] = useState(true);
@@ -33,6 +34,8 @@ function App() {
             <Route path='/forgot-password' element={<ForgotPassword/>}/>
             <Route path='/mainscreen' element={<MainScreen/>}/>
             <Route path='/changepass' element={<ChangePassword/>}/>
+            <Route path='/bloodbankpage' element={<BbMainScreen/>}/>
+
           </Route>
         </Routes>
       </Router>
