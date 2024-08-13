@@ -32,7 +32,7 @@ Rudhira is a comprehensive blood donation management system designed to simplify
 
 -[@OmKabra](https://github.com/Omkabra)
 
--[@AbirSrivastava](https://github.com/ABSH2912)
+-[@AbirShrivastava](https://github.com/ABSH2912)
 
 -[@RaghavKhandelwal](https://github.com/Raghav2806)
 
