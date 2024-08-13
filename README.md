@@ -1,5 +1,4 @@
-![image](https://github.com/user-attachments/assets/a984f354-13cc-420a-bf77-5a2946a5e118)
-
+![Screenshot 2024-08-13 232402](https://github.com/user-attachments/assets/61b56a09-e06a-4389-88bb-f466966f3c58)
 # RUDHIRA
 Rudhira is a comprehensive blood donation management system designed to simplify the process of connecting blood donors with recipients.This platform caters to donors, recipients, and organizations, ensuring city-based donor-recipient matches and reduced operational delays during times of emergencies. It also allows blood banks to effectively manage and promote quarterly blood donation events. Rudhira aims to make blood donation more accessible, efficient, and transparent.
 
