@@ -15,6 +15,12 @@ Rudhira is a comprehensive blood donation management system designed to simplify
 - **Password Recovery:**  Securely reset forgotten passwords via email or SMS verification.
 - **Request Expiration:** Automatically remove blood requests after a certain period or once fulfilled.
 
+## Tech Stack
+
+**Client:** React JS
+**Server:** Node JS
+**Database:** MongoDB
+
 
 ### `npm start`
 
