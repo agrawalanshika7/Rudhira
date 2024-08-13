@@ -5,6 +5,26 @@
 Rudhira is a comprehensive blood donation management system designed to simplify the process of connecting blood donors with recipients.This platform caters to donors, recipients, and organizations, ensuring city-based donor-recipient matches and reduced operational delays during times of emergencies. It also allows blood banks to effectively manage and promote quarterly blood donation events. Rudhira aims to make blood donation more accessible, efficient, and transparent.
 
 
+1. User Registration and Authentication
+Sign Up/Login: Users can register using email, phone, or social media accounts.
+Two-Factor Authentication (2FA): Enhance security with optional 2FA during login.
+2. User Dashboard
+Profile Management: Users can update personal details, contact information, and blood group.
+Donation History: Track past donations and requests.
+Eligibility Calculator: Determine eligibility to donate blood based on various criteria (age, weight, last donation date, etc.).
+3. Blood Donation Request
+Request Blood: Users can request specific blood types with required details like location, quantity, and urgency.
+Request Status Tracking: Track the status of blood requests (pending, in progress, fulfilled).
+Automatic Matching: Automatically match requests with potential donors in the area.
+4. Blood Donation Camps
+Camp Finder: Find nearby blood donation camps based on location.
+Camp Registration: Users can register for upcoming camps.
+Camp Details: Provide details like date, time, location, and organizers.
+5. Donor Features
+Donor Search: Search for potential donors by blood type, location, and availability.
+Donation Scheduling: Schedule donations based on availability and eligibility.
+Reminders and Notifications: Notify users about upcoming donation dates and camps.
+
 
 ### `npm start`
 
