@@ -17,9 +17,9 @@ Rudhira is a comprehensive blood donation management system designed to simplify
 
 ## Tech Stack
 
--**Client:** React JS
--**Server:** Node JS
--**Database:** MongoDB
+- **Client:** React JS.
+- **Server:** Node JS.
+- **Database:** MongoDB.
 
 
 ### `npm start`
