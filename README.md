@@ -25,8 +25,33 @@ Rudhira is a comprehensive blood donation management system designed to simplify
 
 
 ## Screenshots
+**Entry Screen**
+
+![image](https://github.com/user-attachments/assets/62beca19-8cba-4613-b59e-2c46188caa5c)
+
 **Log In**
+
 ![image](https://github.com/user-attachments/assets/7d95998a-fd35-4d95-92db-63f4b628e3ea)
+
+**User Homepage**
+
+![image](https://github.com/user-attachments/assets/d531318d-0bb1-4d53-a871-7565fcc6b66a)
+
+**Civilian SignUp**
+
+![image](https://github.com/user-attachments/assets/8e877b50-4149-4d02-b6a6-5cc2b910c749)
+
+**Profile Creation**
+
+![image](https://github.com/user-attachments/assets/3534e908-bdf4-4977-967d-a77673d8b561)
+
+**Forgot Password**
+
+![image](https://github.com/user-attachments/assets/d66b3f18-ecbc-40f3-8518-81d99e78980c)
+
+
+
+
 
 
 ## Relevant Links
